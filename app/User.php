@@ -44,8 +44,5 @@ class User extends \TCG\Voyager\Models\User
         return $this->hasMany('App\Cart');
     }
     //one-to-many relationship with recommendations
-    public function recomms()
-    {
-        return $this->hasMany('App\Recommend');
-    }
+    
 }

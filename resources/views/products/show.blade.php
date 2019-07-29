@@ -56,7 +56,7 @@
               {{Form::submit('Delete', ['class'=>'btn btn-danger'])}} 
               {!!Form::close()!!} 
 
-           <!-- Adds the buy and call buttons if the product doesn't belong to current user -->
+           
             @else
               {!!Form::open(['action'=>['CartsController@update', $product->id], 'method'=>'POST','class'=>'float-left'])!!} 
               {{Form::hidden('_method','PUT')}}

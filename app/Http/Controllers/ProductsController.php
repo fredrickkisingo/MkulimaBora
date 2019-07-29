@@ -66,10 +66,10 @@ class ProductsController extends Controller
         //Get file name with the extension
             $fileNameWithExt = $request->file('cover_image')->getClientOriginalName();
         //Get just the file name
-            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME); //this is just php
+            $fileName = pathinfo($fileNameWithExt, PATHINFO_FILENAME); 
 
         //Get just the extension
-            $extension = $request->file('cover_image')->getClientOriginalExtension(); //this is laravel
+            $extension = $request->file('cover_image')->getClientOriginalExtension();
 
         //file name to Store
         //the concatenation will make the upload unique because of the time stamp
