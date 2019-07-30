@@ -7,11 +7,7 @@ use FarhanWazir\GoogleMaps\GMaps;
 
 class PagesController extends Controller
 {
-    protected $gmaps;
-    public function __construct(GMaps $gmaps)
-    {
-        $this->gmaps = $gmaps;
-    }
+  
     /**
      * These methods are used to display views/pages that are created in the views>pages folder
      */
