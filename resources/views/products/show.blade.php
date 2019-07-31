@@ -46,29 +46,7 @@
           <hr>
           
 
-          <!--if user has logged in -->
-          @if(!Auth::guest()) 
-
-            @if(Auth::user()->id == $product->user_id)
-              <a href="/products/{{$product->id}}/edit" class="btn btn-warning">Edit</a> 
-              {!!Form::open(['action'=>['ProductsController@destroy', $product->id], 'method'=>'POST','class'=>'float-right'])!!} 
-              {{Form::hidden('_method', 'DELETE')}} 
-              {{Form::submit('Delete', ['class'=>'btn btn-danger'])}} 
-              {!!Form::close()!!} 
-
-           
-            @else
-              {!!Form::open(['action'=>['CartsController@update', $product->id], 'method'=>'POST','class'=>'float-left'])!!} 
-              {{Form::hidden('_method','PUT')}}
-              
-              {!!Form::close()!!}
-              
-            @endif 
-
-         <!-- Adds the login buttons if user is guest/not logged in -->
-          @else
-            <a href="/login" class="btn text-uppercase btn-info">Login</a>
-          @endif 
+         
 
           {{-- @if(!Auth::guest()) @if(Auth::user()->id != $product->user_id) @endif @endif --}}
           <!-- row.// -->
