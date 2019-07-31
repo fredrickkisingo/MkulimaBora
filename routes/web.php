@@ -17,17 +17,8 @@ Route::get('/about', 'PagesController@about');
 
 Route::get('/services', 'PagesController@services');
 
-Route::resource('map', 'MapsController'); //routing for Map View (default & search)
-
-Route::resource('directions', 'DirectionsController'); //routing for Directions View (accepting user input)
-
 Route::resource('products', 'ProductsController'); // sub-access word, then the controller
 
-Route::resource('purchases', 'PurchasesController'); //sub-access word then the controller
-
-Route::resource('cart', 'CartsController'); //sub-access word then the controller
-
-Route::resource('recommend', 'RecommendsController'); //sub-access word then the controller
 
 Auth::routes(); //authentication
 
