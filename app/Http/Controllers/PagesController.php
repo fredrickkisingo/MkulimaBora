@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use FarhanWazir\GoogleMaps\GMaps;
+
 
 class PagesController extends Controller
 {
