@@ -16,7 +16,7 @@ class User extends \TCG\Voyager\Models\User
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','role_id',
+        'name','phone', 'email', 'password','role_id',
     ];
 
     public static $laracombee = ['name' => 'string'];

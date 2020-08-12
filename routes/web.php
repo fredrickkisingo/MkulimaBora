@@ -25,6 +25,10 @@ Auth::routes(); //authentication
 Route::get('/dashboard', 'DashboardController@index');
 
 //admin
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+// Route::group(['prefix' => 'admin'], function () {
+//     Voyager::routes();
+// });
+
+Route::get('/admin',function(){
+        return view('admin.dashboard');
 });

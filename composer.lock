@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78b8cd5a0008e8e80ef6dced86690890",
+    "content-hash": "1d73f08cfde6560b73876708ff21fc2d",
     "packages": [
         {
             "name": "amranidev/laracombee",
@@ -1408,6 +1408,62 @@
             ],
             "description": "Highlight PHP code in terminal",
             "time": "2018-09-29T18:48:56+00:00"
+        },
+        {
+            "name": "jivesh/laravel-slack",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gahlawat/laravel-slack.git",
+                "reference": "5bacf661bbf7a0796b792259b709925454e5ec71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gahlawat/laravel-slack/zipball/5bacf661bbf7a0796b792259b709925454e5ec71",
+                "reference": "5bacf661bbf7a0796b792259b709925454e5ec71",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.6",
+                "phpunit/phpunit": "^7.0",
+                "squizlabs/php_codesniffer": "^3.2"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Gahlawat\\Slack\\SlackServiceProvider"
+                    ],
+                    "aliases": {
+                        "Slack": "Gahlawat\\Slack\\Facade\\Slack"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gahlawat\\Slack\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jivesh Gahlawat",
+                    "email": "jiveshsg@gmail.com"
+                }
+            ],
+            "description": "A minimalist laravel integration for Slack",
+            "homepage": "https://gahlawat.github.io/laravel-slack",
+            "keywords": [
+                "laravel",
+                "slack"
+            ],
+            "time": "2018-04-04T07:50:09+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -3139,6 +3195,79 @@
             "time": "2016-10-13T00:11:37+00:00"
         },
         {
+            "name": "samerior/mobile-money",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/samerior/mobile-money.git",
+                "reference": "a3857001b2d76b8803589ab35fb39f3c7f9e46c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/samerior/mobile-money/zipball/a3857001b2d76b8803589ab35fb39f3c7f9e46c5",
+                "reference": "a3857001b2d76b8803589ab35fb39f3c7f9e46c5",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3",
+                "illuminate/support": "~5.5",
+                "jivesh/laravel-slack": "^2.0",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "~3.6",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Samerior\\MobileMoney\\MobileMoneyServiceProvider"
+                    ],
+                    "aliases": {
+                        "B2C": "Samerior\\MobileMoney\\Mpesa\\Facades\\B2C",
+                        "Identity": "Samerior\\MobileMoney\\Mpesa\\Facades\\Identity",
+                        "Registrar": "Samerior\\MobileMoney\\Mpesa\\Facades\\Registrar",
+                        "STK": "Samerior\\MobileMoney\\Mpesa\\Facades\\STK"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Samerior\\MobileMoney\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Samuel Dervis",
+                    "email": "sam@samerior.com",
+                    "homepage": "https://samerior.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Mobile payments API - Kenya",
+            "homepage": "https://github.com/samerior/mobile-money",
+            "keywords": [
+                "api",
+                "equitel",
+                "equity",
+                "mobile money",
+                "mpesa",
+                "payments",
+                "pesa",
+                "samerior group",
+                "samueldervis"
+            ],
+            "time": "2019-06-06T19:44:07+00:00"
+        },
+        {
             "name": "seld/jsonlint",
             "version": "1.7.1",
             "source": {
@@ -4517,6 +4646,7 @@
                 "psr",
                 "psr-7"
             ],
+            "abandoned": "laminas/laminas-diactoros",
             "time": "2018-09-05T19:29:37+00:00"
         }
     ],
