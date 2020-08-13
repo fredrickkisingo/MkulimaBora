@@ -56,13 +56,13 @@
             </a>
           </li>
           <li class="{{ 'admin/role-register'==request()->path() ? 'active': ''}}">
-            <a href="./notifications.html">
+            <a href="/admin/role-register">
               <i class="now-ui-icons ui-1_bell-53"></i>
               <p>Notifications</p>
             </a>
           </li>
           <li class="{{ 'admin/role-register'==request()->path() ? 'active': ''}}">
-            <a href="admin/role-register">
+            <a href="/admin/role-register">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
