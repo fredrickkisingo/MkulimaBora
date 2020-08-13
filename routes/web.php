@@ -29,6 +29,19 @@ Route::get('/dashboard', 'DashboardController@index');
 //     Voyager::routes();
 // });
 
-Route::get('/admin',function(){
-        return view('admin.dashboard');
+Route::group(['middleware'=>['auth','admin']],function(){
+
+        Route::get('/admin/dashboard',function(){
+                return view('admin.dashboard');
+        });
+
+        Route::get('admin/role-register','Admin\DashboardController@register');
+
+        Route::get('/role-edit/{id}','Admin\DashboardController@registeredit');
+        
+        Route::put('/role-register-update/{id}','Admin\DashboardController@registerupdate');
+
+        Route::delete('/role-delete/{id}','Admin\DashboardController@registerdelete');
 });
+
+

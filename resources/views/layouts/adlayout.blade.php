@@ -37,8 +37,8 @@
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
-          <li>
-            <a href="./dashboard.html">
+          <li class="{{ 'admin/dashboard'==request()->path() ? 'active': ''}}">
+            <a href="/admin/dashboard">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
@@ -55,19 +55,19 @@
               <p>Maps</p>
             </a>
           </li>
-          <li>
+          <li class="{{ 'admin/role-register'==request()->path() ? 'active': ''}}">
             <a href="./notifications.html">
               <i class="now-ui-icons ui-1_bell-53"></i>
               <p>Notifications</p>
             </a>
           </li>
-          <li>
-            <a href="./user.html">
+          <li class="{{ 'admin/role-register'==request()->path() ? 'active': ''}}">
+            <a href="admin/role-register">
               <i class="now-ui-icons users_single-02"></i>
               <p>User Profile</p>
             </a>
           </li>
-          <li class="active ">
+        <li  >
             <a href="./tables.html">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>Table List</p>
@@ -128,6 +128,28 @@
                 </a>
               </li>
               <li class="nav-item dropdown">
+
+                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                   
+                    @if(Auth::user()->role_id==3)
+                    <a class="dropdown-item" href="products/create">Add Product</a>
+                    @endif
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                </div>
+            </li>
+              {{-- <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="now-ui-icons location_world"></i>
                   <p>
@@ -139,7 +161,7 @@
                   <a class="dropdown-item" href="#">Another action</a>
                   <a class="dropdown-item" href="#">Something else here</a>
                 </div>
-              </li>
+              </li> --}}
               <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons users_single-02"></i>
