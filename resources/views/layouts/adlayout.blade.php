@@ -55,10 +55,10 @@
               <p>Maps</p>
             </a>
           </li>
-          <li class="{{ 'admin/role-register'==request()->path() ? 'active': ''}}">
-            <a href="/admin/role-register">
+          <li class="{{ 'abouts'==request()->path() ? 'active': ''}}">
+            <a href="/abouts">
               <i class="now-ui-icons ui-1_bell-53"></i>
-              <p>Notifications</p>
+              <p>About Us</p>
             </a>
           </li>
           <li class="{{ 'admin/role-register'==request()->path() ? 'active': ''}}">
@@ -67,7 +67,7 @@
               <p>User Profile</p>
             </a>
           </li>
-        <li  >
+        <li class="{{ './tables.html'==request()->path() ? 'active': ''}}">
             <a href="./tables.html">
               <i class="now-ui-icons design_bullet-list-67"></i>
               <p>Table List</p>
