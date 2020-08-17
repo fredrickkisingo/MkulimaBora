@@ -49,6 +49,11 @@ Route::group(['middleware'=>['auth','admin']],function(){
         Route::get('/about-us/{id}','Admin\AboutusController@edit');
         Route::put('/aboutus-update/{id}','Admin\AboutusController@update');
         Route::delete('about-us-delete/{id}','Admin\AboutusController@delete');
+
+        Route::get('/service-category','Admin\ServiceController@index');
+        Route::get('/service-create','Admin\ServiceController@create');
+        Route::post('/category-store','Admin\ServiceController@store');
+        Route::get('/service-cate-edit/{id}','Admin\ServiceController@edit');
 });
 
 

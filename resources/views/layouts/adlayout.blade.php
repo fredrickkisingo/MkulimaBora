@@ -52,10 +52,10 @@
               <p>Icons</p>
             </a>
           </li>
-          <li>
-            <a href="./map.html">
+          <li class="{{ 'service-category'==request()->path() ? 'active': ''}}">
+            <a href="{{url('service-category')}}">
               <i class="now-ui-icons location_map-big"></i>
-              <p>Maps</p>
+              <p>Services -Category</p>
             </a>
           </li>
           <li class="{{ 'abouts'==request()->path() ? 'active': ''}}">
@@ -236,6 +236,19 @@
   <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script src="{{asset('assets/js/dataTables.min.js') }}"></script>
+
+
+<script src="{{asset('assets/js/sweetalert.js')}}"></script>
+<script>
+  //sweet alert message
+   @if (session('status'))
+             swal({
+            title:'{{session('status') }}',
+            icon:'{{session('statuscode') }}',
+            button: "Done!",
+              });      
+   @endif
+</script>
 
 
   @yield('scripts')

@@ -37,13 +37,45 @@ About Us | MkulimaBora Admin
               
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+              <button type="button" class="btn btn-s econdary" data-dismiss="modal">CLOSE</button>
               <button type="submit" class="btn btn-primary">SAVE</button>
             </div>
       </form>
       </div>
     </div>
   </div>
+
+  {{--delete modal--}}
+  <!-- Modal -->
+<div class="modal fade" id="deletemodalpop" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form id="delete_modal_Form" method="POST">
+            {{ csrf_field() }}
+            {{method_field('DELETE')}}
+
+          <div class="modal-body">
+            <input type="hidden" id="delete_aboutus_id">
+              <h5>Are You Sure.? you want to delete this data</h5>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Yes,Delete it</button>
+          </div>
+
+    </form>
+
+    </div>
+  </div>
+</div>
+{{--end modal--}}
+
 
 <div class="row">
     <div class="col-md-12">
@@ -52,11 +84,7 @@ About Us | MkulimaBora Admin
           <h4 class="card-title">About Us
           <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">ADD</button>
         </h4>
-              @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-              @endif
+             
         </div>
         <style>
           .w-10p{
@@ -106,11 +134,8 @@ About Us | MkulimaBora Admin
                       <a href="{{url('about-us/'.$data->id)}}" class="btn btn-success">EDIT</a>
                       </td>
                       <td class="text-right">
-                          <form action="{{ url('about-us-delete/'.$data->id) }}" method="POST">
-                           {{ csrf_field() }}
-                           {{method_field('DELETE')}}
-                            <button type="submit"class="btn btn-danger">DELETE</button>
-                          </form>
+                        <a href="javascript:void(0)" class="btn btn-danger deletebtn">DELETE</a>
+ 
                       </td>
                     </tr>    
                     @endforeach   
@@ -130,6 +155,20 @@ About Us | MkulimaBora Admin
 <script>
 $(document).ready( function () {
   $('#datatable').DataTable();
-} ); 
+
+  $('#datatable').on('click','.deletebtn',function(){
+      $tr = $(this).closest('tr');
+      
+      var data = $tr.children("td").map(function (){
+        return $(this).text();
+      }).get();
+
+        $('#delete_aboutus_id').val(data[0]);
+
+        $('#delete_modal_Form').attr('action','/about-us-delete/'+data[0]);
+
+        $('#deletemodalpop').modal('show');
+  });
+}); 
 </script>
 @endsection
