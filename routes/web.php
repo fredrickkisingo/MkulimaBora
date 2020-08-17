@@ -44,6 +44,11 @@ Route::group(['middleware'=>['auth','admin']],function(){
         Route::delete('/role-delete/{id}','Admin\DashboardController@registerdelete');
 
         Route::get('/abouts','Admin\AboutusController@index');
+
+        Route::post('/save-aboutus','Admin\AboutusController@store');
+        Route::get('/about-us/{id}','Admin\AboutusController@edit');
+        Route::put('/aboutus-update/{id}','Admin\AboutusController@update');
+        Route::delete('about-us-delete/{id}','Admin\AboutusController@delete');
 });
 
 
