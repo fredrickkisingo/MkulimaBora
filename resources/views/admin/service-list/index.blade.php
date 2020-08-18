@@ -40,7 +40,8 @@ Services Category-List| MkulimaBora Admin
                     <div class="form-group">
                         <label for="">ServiceList Price</label>
                             <input type="text" name="price" class="form-control" placeholder="Enter Price">
-                    </div><div class="form-group">
+                    </div>
+                    <div class="form-group">
                         <label for="">ServiceList Duration</label>
                             <input type="text" name="duration" class="form-control" placeholder="Enter Duration">
                     </div>
@@ -98,7 +99,7 @@ Services Category-List| MkulimaBora Admin
                     <td>{{$item->price}}</td>
 
                     <td class="text-right">
-                    <a href="{{url('/')}}" class="btn btn-info">Edit</a>
+                    <a href="{{url('service-list-edit/'.$item->id) }}" class="btn btn-info">Edit</a>
                     </td>
                     <td class="text-right">
                         <button type="button" class="btn btn-danger servicedeletebtn">Delete</button>

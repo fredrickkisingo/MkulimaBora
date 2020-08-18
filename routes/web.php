@@ -58,6 +58,8 @@ Route::group(['middleware'=>['auth','admin']],function(){
         Route::delete('/service-category-delete/{id}','Admin\ServiceController@delete');
         Route::get('/service-list','Admin\ServicelistController@index');
         Route::post('/servicelist-add','Admin\ServicelistController@store');
+        Route::get('/service-list-edit/{id}','Admin\ServicelistController@edit');
+        Route::put('/servicelist-update/{id}','Admin\ServicelistController@update');
 });
 
 
