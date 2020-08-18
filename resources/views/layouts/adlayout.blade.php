@@ -58,6 +58,12 @@
               <p>Services -Category</p>
             </a>
           </li>
+          <li class="{{ 'service-list'==request()->path() ? 'active': ''}}">
+            <a href="{{url('service-list')}}">
+              <i class="now-ui-icons location_map-big"></i>
+              <p>Services -Category-List</p>
+            </a>
+          </li>
           <li class="{{ 'abouts'==request()->path() ? 'active': ''}}">
             <a href="/abouts">
               <i class="now-ui-icons ui-1_bell-53"></i>
@@ -214,7 +220,7 @@
           <div class="copyright" id="copyright">
             &copy; <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by Fredrick Kisingo</a>.
           </div>
         </div>
       </footer>
@@ -235,6 +241,8 @@
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
+
+  {{-- sweetalert --}}
   <script src="{{asset('assets/js/dataTables.min.js') }}"></script>
 
 

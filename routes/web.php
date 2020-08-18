@@ -54,6 +54,9 @@ Route::group(['middleware'=>['auth','admin']],function(){
         Route::get('/service-create','Admin\ServiceController@create');
         Route::post('/category-store','Admin\ServiceController@store');
         Route::get('/service-cate-edit/{id}','Admin\ServiceController@edit');
+        Route::put('/category-update/{id}','Admin\ServiceController@update');
+        Route::delete('/service-category-delete/{id}','Admin\ServiceController@delete');
+        Route::get('/service-list','Admin\ServicelistController@index');
 });
 
 

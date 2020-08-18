@@ -20,8 +20,11 @@ Services Category-Edit| MkulimaBora Admin
         </div>
 
         <div class="card-body">
-        <form action ="{{url('')}}" method="POST">
+        <form action ="{{ url('category-update/'.$service_category->id) }}" method="POST">
             {{ csrf_field() }}
+            {{-- //to updaate we need to use method field --}}
+            {{method_field('PUT') }}
+            
                     <div class="row">
                         <div class="col-md-6">
                             <label>Service Category Name</label>
